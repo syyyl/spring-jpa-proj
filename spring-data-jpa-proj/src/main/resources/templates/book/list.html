@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>list</title>
+</head>
+<body>
+
+    <table>
+        <tr th:each="book : ${ bookList }">
+            <td th:text="${ book.bookCode }"></td>
+            <td th:text="${ book.bookName }"></td>
+            <td th:text="${ book.publisher }"></td>
+            <td th:text="${ book.releaseDate }"></td>
+            <td th:text="${ book.amount }"></td>
+            <td th:text="${ book.categoryCode }"></td>
+            <td th:text="${ book.loanableYn }"></td>
+        </tr>
+    </table>
+
+    <div id="paging" >
+        <button
+                th:onclick="'location.href=\'/book/list?page=' + @{${paging.startPage}} + '\''">
+            <<
+        </button>
+        <button
+                th:onclick="'location.href=\'/book/list?page=' + @{${paging.currentPage - 1}} + '\''"
+                th:disabled="${ bookList.first }">
+            <
+        </button>
+        <th:block th:each="page : ${ #numbers.sequence(paging.startPage, paging.endPage)}">
+            <button th:onclick="'location.href=\'/book/list?page=' + @{${page}} + '\''"
+                    th:text="${ page }"
+                    th:disabled="${ paging.currentPage eq page }">
+            </button>
+        </th:block>
+        <button
+                th:onclick="'location.href=\'/book/list?page=' + @{${paging.currentPage + 1}} + '\''"
+                th:disabled="${ bookList.last }">
+            >
+        </button>
+        <button
+                th:onclick="'location.href=\'/book/list?page=' + @{${paging.endPage}} + '\''">
+            >>
+        </button>
+    </div>
+
+</body>
+</html>

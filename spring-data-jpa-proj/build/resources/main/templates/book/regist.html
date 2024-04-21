@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>regist</title>
+</head>
+<body>
+    <h1>신규 메뉴 등록</h1>
+    <form action="/book/regist" method="post">
+        <label>도서 제목 : </label><input type="text" name="bookName"><br>
+        <label>출판사 : </label><input type="text" name="publisher"><br>
+        <label>출간일 : </label><input type="number" name="releaseDate"><br>
+        <label>보유권수 : </label><input type="number" name="amount"><br>
+        <label>카테고리 : </label><input type="number" name="categoryCode"><br>
+        <label>대출 가능 여부 : </label>
+        <select name="loanableYn">
+            <option value="true">대출가능</option>
+            <option value="false">대출불가</option>
+        </select><br>
+        <input type="submit" value="전송">
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>search result</title>
+</head>
+<body>
+<h1>[[${amount}]]보다 재고량 적은 도서 목록</h1>
+<table>
+    <tr th:each="book : ${ bookList }">
+        <td th:text="${ book.bookCode }"></td>
+        <td th:text="${ book.bookName }"></td>
+        <td th:text="${ book.publisher }"></td>
+        <td th:text="${ book.releaseDate }"></td>
+        <td th:text="${ book.amount }"></td>
+        <td th:text="${ book.categoryCode }"></td>
+        <td th:text="${ book.loanableYn }"></td>
+    </tr>
+</table>
+</body>
+</html>

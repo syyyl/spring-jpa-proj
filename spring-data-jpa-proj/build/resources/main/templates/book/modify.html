@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>modify</title>
+</head>
+<body>
+    <h1>도서 제목 수정</h1>
+    <form action="/book/modify" method="post">
+        <label>수정할 도서 번호 : </label>
+        <input type="number" name="bookCode"><br>
+        <label>새로운 도서 제목 : </label>
+        <input type="text" name="bookName"><br>
+        <input type="submit" value="전송">
+    </form>
+</body>
+</html>
